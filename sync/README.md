@@ -145,7 +145,7 @@ granularity keeps everything that pertains to a document in one place.
 
 ## Tooling
 
-Two scripts in `sync/`:
+Scripts in `sync/`:
 
 ### `decompose.py`
 
@@ -179,9 +179,9 @@ reassembly today).
 
 ### Roundtrip property
 
-`decompose ∘ compose = identity` on the current Atlas. This is verified in CI
-via `--check`. The property matters because it's the formal guarantee that no
-content is lost when moving to the decomposed representation.
+`decompose ∘ compose = identity` on the current Atlas. The property matters
+because it's the formal guarantee that no content is lost when moving to the
+decomposed representation.
 
 Byte-faithful body preservation also means that "structured" labels in
 documents like Needed Research (`**Content**:`), Scenario (`**Description**:`,
@@ -237,9 +237,9 @@ The `content/` directory in this branch is the result of running
 `decompose.py` against the current Atlas — the working artifact for browsing
 or evaluating the structure.
 
-Tests live in `sync/test_decompose.py` and `sync/test_compose.py`:
+Tests live alongside the scripts in `sync/`:
 
 ```
 cd sync && python -m pytest
-# 76 passed
+# 125 passed
 ```
